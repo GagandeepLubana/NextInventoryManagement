@@ -30,12 +30,9 @@ export default function Home() {
     const docs = await getDocs(snapshot);
     const inventoryList = [];
     docs.forEach((doc) => {
-      inventoryList.push({
-        name: doc.id,
-        ...doc.data(),
-      });
-      setInventory(inventoryList);
+      inventoryList.push({ name: doc.id, ...doc.data() });
     });
+    setInventory(inventoryList);
   };
 
   const removeItem = async (item) => {
